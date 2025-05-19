@@ -18,7 +18,8 @@ printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbase
 dnf5 install -y codium
 dnf5 install -y zsh
 dnf5 install lact
-
+dnf copr enable ilyaz/LACT
+dnf install -y lact
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
