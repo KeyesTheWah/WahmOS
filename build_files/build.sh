@@ -13,6 +13,8 @@ set -ouex pipefail
 dnf5 -y install dnf5-plugins
 dnf5 install -y tmux
 rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
+# TODO: Change this to be less clunky
+printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg\nmetadata_expire=1h\n" | sudo tee -a /etc/yum.repos.d/vscodium.repo
 dnf5 install -y codium
 dnf5 install -y zsh
 dnf5 install lact
