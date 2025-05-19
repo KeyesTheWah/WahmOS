@@ -1,8 +1,7 @@
 #!/bin/bash
 
 set -ouex pipefail
-dnf5 -y config-manager addrepo --from-repofile=https://repository.mullvad.net/rpm/stable/mullvad.repo
-rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
+
 ### Install packages
 
 # Packages can be installed from any enabled yum repo on the image.
