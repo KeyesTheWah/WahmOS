@@ -1,7 +1,8 @@
 #!/bin/bash
 
 set -ouex pipefail
-
+dnf5 -y config-manager addrepo --from-repofile=https://repository.mullvad.net/rpm/stable/mullvad.repo
+rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
 ### Install packages
 
 # Packages can be installed from any enabled yum repo on the image.
@@ -10,7 +11,10 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y tmux 
+dnf5 install -y tmux
+dnf5 install -y codium
+dnf5 install -y zsh
+dnf5 install lact
 
 # Use a COPR Example:
 #
